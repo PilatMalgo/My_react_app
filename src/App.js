@@ -22,15 +22,23 @@ class App extends Component{
     this.state = {
       data: []
     }
+	
+	axios.get('http://195.181.210.249:3000/todo')
+      .then(res => {
+      const todo = {text: res.title, id: window.id++}
+      this.state.data.push(todo);
+      this.setState({data: this.state.data});
+     })
   }
   // Add todo handler
   addTodo(val){
     // Assemble data
-    const todo = {text: val, id: window.id++}
+		const todo = {text: val, id: window.id++}
     // Update data
-    this.state.data.push(todo);
+		this.state.data.push(todo);
     // Update state
-    this.setState({data: this.state.data});
+		this.setState({data: this.state.data});
+		
   }
   // Handle remove
   handleRemove(id){
