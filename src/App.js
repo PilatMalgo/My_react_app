@@ -25,9 +25,8 @@ class App extends Component{
 	
 	axios.get('http://195.181.210.249:3000/todo')
       .then(res => {
-      const todo = {text: res.title, id: window.id++}
-      this.state.data.push(todo);
-      this.setState({data: this.state.data});
+		console.log(res.data);
+		this.setState({data: res.data});
      })
   }
   // Add todo handler
