@@ -25,7 +25,7 @@ class App extends Component{
 	
 	axios.get('http://195.181.210.249:3000/todo')
       .then(res => {
-		console.log(res.data);
+		//console.log(res.data);
 		this.setState({data: res.data});
      })
   }
