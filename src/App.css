@@ -34,10 +34,19 @@
 }
 
 .list{
-background: grey;	
+  background-color: #9dcbe0;
 }
 
 .list-group-item{
 	display: block;
 	width: 200px;
+}
+h1{
+  text-align: left;
+  font-family: pacifico;
+  letter-spacing: 2pt;
+  color: crimson;
+}
+form{
+
 }

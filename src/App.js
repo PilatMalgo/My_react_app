@@ -25,18 +25,40 @@ class App extends Component{
 	
 	axios.get('http://195.181.210.249:3000/todo')
       .then(res => {
-	 //console.log(res.data);
+		console.log(res.data);
 		this.setState({data: res.data});
+		//console.log(this.state);
      })
   }
   // Add todo handler
   addTodo(val){
     // Assemble data
-		const todo = {text: val, id: window.id++}
+		const todo = {title: val, id: window.id++}
+	//send API POST
+		  try {
+			  fetch('http://195.181.210.249:3000/todo', {
+			  method: 'POST',
+			  headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			  },
+			  body: JSON.stringify({
+				title: todo.title,
+				id: todo.id,
+			  })
+			})
+		  } catch (error) {
+			console.error(error)
+		  }	
     // Update data
 		this.state.data.push(todo);
     // Update state
 		this.setState({data: this.state.data});
+		console.log(this.state.data);
+		
+		
+
+		
 		
   }
   // Handle remove

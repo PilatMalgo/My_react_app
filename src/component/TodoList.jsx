@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todo = ({todo, remove}) => {
     // Each Todo
-    return (<a href="#" className="list-group-item" onClick={() => {remove(todo.id)}}>{todo.text}</a>);
+    return (<a href="#" className="list-group-item" onClick={() => {remove(todo.id)}}>{todo.title}</a>);
   }
   
   const TodoList = ({todos, remove}) => {

@@ -12,7 +12,7 @@ class TodoContainer extends React.{
       // Add todo handler
       addTodo(val){
         // Assemble data
-        const todo = {text: val, id: window.id++}
+        const todo = {title: val, id: window.id++}
         // Update data
         this.state.data.push(todo);
         // Update state
